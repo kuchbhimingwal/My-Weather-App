@@ -17,11 +17,19 @@ function searchWeather(location){
 }
 
 inputField.addEventListener('keydown',(e)=>{
-  // console.log('value = '+e.target.value);
-  // console.log(e.key);
-  // console.log(e.target.value+e.key);
-  const inpVal = e.target.value+e.key ;
+  let inpVal = '';
   let searchHtml = '';
+
+  if(e.key !== "Backspace"){
+    // console.log('value = '+e.target.value);
+    // console.log(e.key);
+    // console.log(e.target.value+e.key);
+    inpVal = e.target.value+e.key ;
+    console.log(inpVal);
+  }else{
+    inpVal = e.target.value.slice(0, -1);
+    console.log(inpVal);
+  }
   fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${inpVal}&limit=5&appid=e1418eb1d9c7b0835d33abf765159443`).then((response)=>{
     return response.json()
   }).then((data)=>{
