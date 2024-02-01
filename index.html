@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Weather App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section id="main">
+    <div id="firstSection">
+      <p id="websiteName">MyWeatherApp.com</p>
+      <div id="wethaerInfo">
+        <h1>We are getting your location</h1>
+      </div>
+    </div>
+    <div id="secondSection">
+      <div id="search">
+        <input type="text" id="searchInput">
+        <button id="searchButton"></button>
+      </div>
+      <div id="suggestedLoc">
+        <ul>
+          <li>Toronto</li>
+          <li>Manchester</li>
+          <li>New Yourk</li>
+          <li>California</li>
+        </ul>
+      </div>
+      <div id="weatherDetails">
+        <h2>Weather Details</h2>
+        <div id="info"></div>
+      </div>
+    </div>
+  </section>
+</body>
+<script src="./src/currentWeather.js"></script>
+</html>
