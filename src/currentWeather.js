@@ -12,9 +12,43 @@ function printMain(weatherData){
     <h3>${weatherData.name}</h3>
     <p>${date.getHours()}:${date.getMinutes()}-${date.toLocaleDateString(undefined, options)}}</p>
   </span>
-  <span><p1>${weatherData.weather[0].description}</p1></span>`;
+  <span>
+  <p1>${weatherData.weather[0].description}</p1>
+  <img src="https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png"></img>
+  </span>`;
 
+  const sideDisplayHtml = `
+    <div class="sideDisDiv">
+      <h2>Feels like</h2>
+      <p>${(weatherData.main.feels_like - 273.15).toFixed(1)}<p>
+    </div>
+    <div class="sideDisDiv">
+      <h2>Max Temperature</h2>
+      <p>${(weatherData.main.temp_max - 273.15).toFixed(1)}<p>
+    </div>
+    <div class="sideDisDiv">
+      <h2>Min Temperature</h2>
+      <p>${(weatherData.main.temp_min - 273.15).toFixed(1)}<p>
+    </div>
+    <div class="sideDisDiv">
+      <h2>Cloudy</h2>
+      <p>${weatherData.clouds.all}<p>
+    </div>
+    <div class="sideDisDiv">
+      <h2>Humidity</h2>
+      <p>${weatherData.main.humidity}<p>
+    </div>
+    <div class="sideDisDiv">
+      <h2>Wind</h2>
+      <p>${weatherData.wind.speed}km/h<p>
+    </div>
+    <div class="sideDisDiv">
+      <h2>Wind</h2>
+      <p>${weatherData.wind.speed}km/h<p>
+    </div>
+  `
   document.querySelector('#wethaerInfo').innerHTML = mainDisplayHtml;
+  document.querySelector('#info').innerHTML = sideDisplayHtml;
 }
 
 //this is the function to call the api with fetch

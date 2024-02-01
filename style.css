@@ -29,7 +29,6 @@ html, body {
   flex-wrap: wrap;
   background-color: black;
   background: linear-gradient(to bottom, #2C5E84, #73828E);
-  opacity: .4;
   color: white;
 }
 
@@ -74,12 +73,30 @@ html, body {
 }
 #suggestedLoc{
   width: 100%;
-  margin-top: -130px;
 }
 #weatherDetails{
   width: 100%;
-  margin-top: -100px;
+  padding-top: 50px;
+  text-align: center;
 }
 #suggestedLoc li{
   list-style: none;
+}
+
+.sideDisDiv{
+  /* display: flex;
+  flex-wrap: wrap;
+  justify-content:space-around; */
+  text-align: center;
+  margin-top: 10px;
+}
+.sideDisDiv h2{
+  font-size: 13px;
+  color: white;
+}
+.sideDisDiv p{
+  text-align: end;
+  text-align: center;
+  font-size: 10px;
+  color: #ffffff;
 }
