@@ -1,6 +1,13 @@
 const listItems = document.querySelectorAll("#suggestedLoc ul li");
 const inputField = document.querySelector('#searchInput');
 
+let inpVal = '';
+let searchHtml = '';
+
+function clearInput(){
+  inputField.value = "";
+  document.querySelector('#searchResult').innerHTML = "";
+}
 listItems.forEach((item)=>{
   item.addEventListener('click',(e)=>{
     searchWeather(e.target.innerText);
@@ -34,7 +41,7 @@ inputField.addEventListener('keydown',(e)=>{
   }).then((data)=>{
     data.forEach((data)=>{
       searchHtml += `
-        <p onclick="getWeatherData(${data.lat},${data.lon})">${data.name},${data.country}</P>
+        <p onclick="getWeatherData(${data.lat},${data.lon}); clearInput();">${data.name},${data.country}</P>
       `
       document.querySelector('#searchResult').innerHTML = searchHtml;
     })
