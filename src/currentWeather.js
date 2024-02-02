@@ -1,16 +1,21 @@
 let currentLat = 0;
 let currentLong = 0;
 const APIkey = 'e1418eb1d9c7b0835d33abf765159443';
+
 //function to print the data we got from fetch
 function printMain(weatherData){
-  const date = new Date();
+  //To get local date accorning to the timezone
+  const datefirst = new Date();
+  var utc = datefirst.getTime() + (datefirst.getTimezoneOffset() * 60000);
+  var date = new Date(utc + (3600000*(weatherData.timezone/3600)));
+
   const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
   const mainDisplayHtml = `
   <span><h1>${(weatherData.main.temp-273.15).toFixed(1)}</h1></span>
   <span>
     <h3>${weatherData.name}</h3>
-    <p>${date.getHours()}:${date.getMinutes()}-${date.toLocaleDateString(undefined, options)}}</p>
+    <p>${date.getHours()}:${date.getMinutes()}-${date.toLocaleDateString(undefined, options)}</p>
   </span>
   <span>
   <p1>${weatherData.weather[0].description}</p1>
@@ -77,8 +82,8 @@ async function main() {
       const latitude = position.coords.latitude;
       const longitude = position.coords.longitude;
       getWeatherData (latitude,longitude);
-      console.log("Latitude:", latitude);
-      console.log("Longitude:", longitude);
+      // console.log("Latitude:", latitude);
+      // console.log("Longitude:", longitude);
       // Use latitude and longitude for further processing
   } catch (error) {
       console.error("Error getting location:", error);

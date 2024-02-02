@@ -23,10 +23,10 @@ inputField.addEventListener('keydown',(e)=>{
 
   if(e.key !== "Backspace"){
     inpVal = e.target.value+e.key ;
-    console.log(inpVal);
+    // console.log(inpVal);
   }else{
     inpVal = e.target.value.slice(0, -1);
-    console.log(inpVal);
+    // console.log(inpVal);
   }
   //fetching each character in the input field to from the geo api to get the first five country in result
   fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${inpVal}&limit=5&appid=${APIkey}`).then((response)=>{
