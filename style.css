@@ -38,6 +38,7 @@ html, body {
   padding-top: 5%;
   padding-left: 10%;
   font-size: 12px;
+  cursor: pointer;
 }
 #wethaerInfo{
   width: 100%;
@@ -100,6 +101,7 @@ height: 200px;
   font-size: 14px;
   font-family: "Helvetica Neue Light", "Helvetica Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: lighter;
+  cursor: pointer;
 
 }
 #weatherDetails{
