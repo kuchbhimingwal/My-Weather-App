@@ -25,9 +25,9 @@ html, body {
 #secondSection{
   width: 35%;
   height: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  background-color: black;
+  padding: 2%;
+  /* display: flex;
+  flex-wrap: wrap; */
   background: linear-gradient(to bottom, #2C5E84, #73828E);
   color: white;
 }
@@ -63,3 +63,75 @@ html, body {
 }
 
 /* Second section style */
+#search{
+width: 100%;
+height: 50px;
+/* background-color: aqua; */
+}
+#search input{
+  border: none;
+  width: 100%;
+  height: 30px;
+  margin-top: 5px;
+  background-color: rgb(0, 0, 0, 0);
+  border-bottom: #73828E 2px solid;
+}
+#search input::placeholder {
+  color: #d6d6d6; /* Change the color of the placeholder text */
+  font-size: 14px;
+  font-family: "Helvetica Neue Light", "Helvetica Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: lighter;
+}
+#suggestedLoc{
+width: 100%;
+height: 200px;
+/* background-color:#73828E; */
+}
+#suggestedLoc h2{
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+#suggestedLoc ul{
+  padding: 0;
+}
+#suggestedLoc li{
+  list-style: none;
+  padding: 8px;
+  font-size: 14px;
+  font-family: "Helvetica Neue Light", "Helvetica Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: lighter;
+
+}
+#weatherDetails{
+width: 100%;
+/* background-color: rgb(16, 36, 36); */
+}
+#weatherDetails table{
+  width: 100%;
+  font-size: 14px;
+  height: 200px;
+  font-family: "Helvetica Neue Light", "Helvetica Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: lighter;
+}
+.align-right{
+  text-align: right;
+}
+#weatherDetails h2{
+  /* text-align: center; */
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+
+/* styling the search resukt */
+#searchResult {
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  width: 31%;
+  z-index: 2;
+}
+#searchResult p{
+  color: rgb(61, 61, 61);
+  border: #73828E 1px solid;
+  padding: 3px;
+  height: 40px;
+}

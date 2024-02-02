@@ -23,34 +23,39 @@ function printMain(weatherData){
   </span>`;
 
   const sideDisplayHtml = `
-    <div class="sideDisDiv">
-      <h2>Feels like</h2>
-      <p>${(weatherData.main.feels_like - 273.15).toFixed(1)}<p>
-    </div>
-    <div class="sideDisDiv">
-      <h2>Max Temperature</h2>
-      <p>${(weatherData.main.temp_max - 273.15).toFixed(1)}<p>
-    </div>
-    <div class="sideDisDiv">
-      <h2>Min Temperature</h2>
-      <p>${(weatherData.main.temp_min - 273.15).toFixed(1)}<p>
-    </div>
-    <div class="sideDisDiv">
-      <h2>Cloudy</h2>
-      <p>${weatherData.clouds.all}<p>
-    </div>
-    <div class="sideDisDiv">
-      <h2>Humidity</h2>
-      <p>${weatherData.main.humidity}<p>
-    </div>
-    <div class="sideDisDiv">
-      <h2>Wind</h2>
-      <p>${weatherData.wind.speed}km/h<p>
-    </div>
-    <div class="sideDisDiv">
-      <h2>Wind</h2>
-      <p>${weatherData.wind.speed}km/h<p>
-    </div>
+
+    <table>
+      <tbody>
+        <tr>
+          <td>Feels like</td>
+          <td class="align-right">${(weatherData.main.feels_like - 273.15).toFixed(1)}</td>
+        </tr>
+        <tr>
+          <td>Max Temperature</td>
+          <td class="align-right">${(weatherData.main.temp_max - 273.15).toFixed(1)}</td>
+        </tr>
+        <tr>
+          <td>Min Temperature</td>
+          <td class="align-right">${(weatherData.main.temp_min - 273.15).toFixed(1)}</td>
+        </tr>
+        <tr>
+          <td>Cloudy</td>
+          <td class="align-right">${weatherData.clouds.all}</td>
+        </tr>
+        <tr>
+          <td>Humidity</td>
+          <td class="align-right">${weatherData.main.humidity}</td>
+        </tr>
+        <tr>
+          <td>Wind</td>
+          <td class="align-right">${weatherData.wind.speed}km/h</td>
+        </tr>
+        <tr>
+          <td>Wind</td>
+          <td class="align-right">${weatherData.wind.speed}km/h</td>
+        </tr>
+      </tbody>
+    </table>
   `
   document.querySelector('#wethaerInfo').innerHTML = mainDisplayHtml;
   document.querySelector('#info').innerHTML = sideDisplayHtml;
